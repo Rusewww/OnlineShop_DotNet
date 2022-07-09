@@ -1,0 +1,11 @@
+﻿<h1>All compounents</h1>
+<h2>@Model.currCategory</h2>
+@{
+    foreach (var ComputerСomponent in Model.getAllСomputerСomponents)
+    {
+        <ul>
+        <h2>Model: @ComputerСomponent.name</h2>
+        <p>Price: @ComputerСomponent.price.ToString("c")</p>
+        </ul>
+    }
+}

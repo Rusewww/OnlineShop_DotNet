@@ -77,7 +77,6 @@ namespace OnlineShop_DotNet.Data.mocks
         }
 
         public IEnumerable<СomputerСomponent> GetFavourite { get; set; }
-        IEnumerable<СomputerСomponent> IAllСomputerСomponents.ComputerСomponents { get; }
 
         public СomputerСomponent GetObjectСomputerСomponent(int CompounentId)
         {

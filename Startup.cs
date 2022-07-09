@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using OnlineShop_DotNet.Data.interfaces;
+using OnlineShop_DotNet.Data.mocks;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace OnlineShop_DotNet
@@ -14,7 +16,9 @@ namespace OnlineShop_DotNet
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddTransient<IAllСomputerСomponents, MockComputerComponent>();
+            services.AddTransient<IСomputerСomponentsCategory, MockCategory>();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
