@@ -1,11 +1,16 @@
 ﻿<h1>All compounents</h1>
-<h2>@Model.currCategory</h2>
+<h3>@Model.currCategory</h3>
+<div class="row mt-5 mb-2">
 @{
     foreach (var ComputerСomponent in Model.getAllСomputerСomponents)
     {
-        <ul>
-        <h2>Model: @ComputerСomponent.name</h2>
+        <div class="col-lg-4">
+        <img class="img-thumbnail" src="@ComputerСomponent.img" alt="@ComputerСomponent.name" />
+        <h2>@ComputerСomponent.name</h2>
+        <p>@ComputerСomponent.shortDesc</p>
         <p>Price: @ComputerСomponent.price.ToString("c")</p>
-        </ul>
+        <p><a class="btn btn-warning" href="#">More</a></p>
+        </div>
     }
 }
+</div>
