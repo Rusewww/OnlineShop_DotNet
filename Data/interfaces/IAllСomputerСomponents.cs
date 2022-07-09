@@ -6,7 +6,7 @@ namespace OnlineShop_DotNet.Data.interfaces
     {
         IEnumerable<СomputerСomponent> ComputerСomponents { get; }
 
-        IEnumerable<СomputerСomponent> GetFavourite { get; set; }
+        IEnumerable<СomputerСomponent> GetFavourite { get; }
 
         СomputerСomponent GetObjectСomputerСomponent(int CompounentId);
     }
