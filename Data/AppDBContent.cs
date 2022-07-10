@@ -11,5 +11,6 @@ namespace OnlineShop_DotNet.Data
 
         public DbSet<СomputerСomponent> ComputerСomponents { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ShopCartItem> ShopCartItem { get; set; }
     }
 }

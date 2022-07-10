@@ -13,6 +13,7 @@ using OnlineShop_DotNet.Data.interfaces;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 using OnlineShop_DotNet.Data;
 using OnlineShop_DotNet.Data.Repository;
+using OnlineShop_DotNet.Data.Models;
 
 namespace OnlineShop_DotNet
 {
@@ -30,7 +31,11 @@ namespace OnlineShop_DotNet
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAllСomputerСomponents, СomputerСomponentRepository>();
             services.AddTransient<IСomputerСomponentsCategory, CategoryRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCart(sp));
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -38,6 +43,7 @@ namespace OnlineShop_DotNet
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
             using (var scope = app.ApplicationServices.CreateScope())
             {

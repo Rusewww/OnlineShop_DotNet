@@ -2,15 +2,8 @@
 <h3>@Model.currCategory</h3>
 <div class="row mt-5 mb-2">
 @{
-    foreach (var ComputerСomponent in Model.getAllСomputerСomponents)
-    {
-        <div class="col-lg-4">
-        <img class="img-thumbnail" src="@ComputerСomponent.img" alt="@ComputerСomponent.name" />
-        <h2>@ComputerСomponent.name</h2>
-        <p>@ComputerСomponent.shortDesc</p>
-        <p>Price: @ComputerСomponent.price.ToString("c")</p>
-        <p><a class="btn btn-warning" href="#">More</a></p>
-        </div>
+    foreach (СomputerСomponent component in Model.getAllСomputerСomponents){
+            @Html.Partial("AllСomputerСomponents", component)
     }
 }
 </div>
