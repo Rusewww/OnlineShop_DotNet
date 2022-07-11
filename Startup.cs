@@ -44,7 +44,12 @@ namespace OnlineShop_DotNet
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(name: "categoryFilter", template: "СomputerСomponents/{action}/{category?}", defaults: new { Controller = "СomputerСomponents", action = "List" });
+            });
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
