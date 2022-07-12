@@ -9,7 +9,7 @@ First ASP.NET Core MVC site. Online shop of computer components.
 - LINQ to Entities
 - HTML/CSS/Bootstrap
 
-##What is ready
+## What is ready
 | Status             | Description                  |
 |--------------------|------------------------------|
 | Ready              | Home page. |
