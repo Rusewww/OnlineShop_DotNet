@@ -33,7 +33,7 @@ namespace OnlineShop_DotNet.Controllers
         public RedirectToActionResult addToCart(int id)
         {
             var item = _сomputerСomponentRepository.ComputerСomponents.FirstOrDefault(i => i.id == id);
-            if(item != null)
+            if (item != null)
             {
                 _shopCart.AddToCart(item);
             }
