@@ -33,7 +33,9 @@ namespace OnlineShop_DotNet.Controllers
                 {
                     сomponents = _allComponents.ComputerСomponents.Where(i => i.Category.categoryName.Equals("Processor")).OrderBy(i => i.id);
                     currCategory = "Processor";
-                } else if (string.Equals("Graphic_cards", category, StringComparison.OrdinalIgnoreCase)) {
+                }
+                else if (string.Equals("Graphic_cards", category, StringComparison.OrdinalIgnoreCase))
+                {
                     сomponents = _allComponents.ComputerСomponents.Where(i => i.Category.categoryName.Equals("Graphic card")).OrderBy(i => i.id);
                     currCategory = "Graphic card";
                 }

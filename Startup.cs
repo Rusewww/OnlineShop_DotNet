@@ -32,6 +32,7 @@ namespace OnlineShop_DotNet
             services.AddTransient<IAllСomputerСomponents, СomputerСomponentRepository>();
             services.AddTransient<IСomputerСomponentsCategory, CategoryRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IAllOrders, OrdersRepository>();
             services.AddScoped(sp => ShopCart.GetCart(sp));
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddMemoryCache();
